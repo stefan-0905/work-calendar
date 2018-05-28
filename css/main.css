@@ -1,0 +1,26 @@
+#month {
+    font-size:24px;
+}
+#month:hover{
+    text-decoration: underline;
+}
+#days, .weekdays {
+    width:80%;
+    margin: 0 10%;
+}
+#days span.day, .weekdays span.day {
+    display: inline-block;
+    width: 13%;
+    padding: 10px 0;
+    margin:0;
+    border:1px solid black;
+}
+.dnone {
+    color:white;
+}
+#days span.day:hover {
+    background-color:#aaa;
+}
+.work-day {
+    background-color:#999;
+}

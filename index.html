@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Work Calendar</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="pt-5">
+<div class="row">
+    <form class="pl-5 col-md-6">
+        <h5 class="text-danger">Attention! <small>For 1<sup>st</sup> shift input 0, for 3<sup>rd</sup> input 1 and for 2<sup>nd</sup> input 2</small></h5>
+        <div class="form-group row no-gutters">
+            <label for="day-in-prev-month" class="col-md-5 col-form-label">Days Worked in Previous Month</label>
+            <div class="col-md-4">
+                <input type="text" id="day-in-prev-month" class="form-control" value="0">
+            </div>
+        </div>
+        <div class="form-group row no-gutters">
+            <label for="prev-shift" class="col-md-5 col-form-label">Ongoing Shift</label>
+            <div class="col-md-4">
+                <input type="text" id="prev-shift" class="form-control">
+            </div>
+        </div>
+        <button type="button" onclick="calculation.calculateDays(month.getMonthDays())" class="btn btn-primary" id="calculate_days">Calculate</button>
+    </form>
+    <form id="calculation-result" class="d-none col-md-6 pr-5 text-right">
+        <div class="form-group row no-gutters">
+            <label for="salary" class="col-md-3 col-form-label">Salary:</label>
+            <div class="col-md-4 pl-2">
+                <input id="salary" class="form-control" type="text" placeholder="Readonly input here…" readonly>
+            </div>
+        </div>
+        <div class="form-group row no-gutters">
+            <label for="work-days" class="col-md-3 col-form-label">Work Days:</label>
+            <div class="col-md-4 pl-2">
+                <input id="work-days" class="form-control" type="text" readonly>
+            </div>
+        </div>
+        <div class="form-group row no-gutters">
+            <label for="free-days" class="col-md-3 col-form-label">Free Days:</label>
+            <div class="col-md-4 pl-2">
+                <input id="free-days" class="form-control" type="text" readonly>
+            </div>
+        </div>
+    </form>
+</div>
+<hr>
+<div class="row"> <!-- Month Navigation -->
+    <div class="col-md-5 text-right">
+        <a id="prev" onclick="month.prevMonth()" href="#"><</a>
+    </div>
+    <div class="col-md-2 text-center">
+        <p id="month"></p>
+    </div>
+    <div class="col-md-5">
+        <a id="next" onclick="month.nextMonth()" href="#">></a>
+    </div>
+</div> <!-- End of Month Navigation -->
+
+<div class="container">
+    <div id="calendar">
+        <div class="weekdays">
+            <span class="text-center day">Sunday</span><span class="text-center day">Monday</span><span class="text-center day">Thursday</span><span class="text-center day">Wednesday</span><span class="text-center day">Tuesdasy</span><span class="text-center day">Friday</span><span class="text-center day">Saturday</span>
+        </div>
+    </div>
+</div>
+
+
+<script src="js_libraries/jquery.min.js"></script>
+<script src="js_libraries/popper.min.js"></script>
+<script src="js_libraries/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
